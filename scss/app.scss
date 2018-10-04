@@ -1,0 +1,344 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import 'foundation';
+@import 'motion-ui';
+
+@include foundation-global-styles;
+// @include foundation-grid;
+// @include foundation-flex-grid;
+@include foundation-xy-grid-classes;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+// @include foundation-range-input;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-card;
+@include foundation-close-button;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-responsive-embed;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+// @include foundation-float-classes;
+@include foundation-flex-classes;
+
+// @include foundation-prototype-classes;
+
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+//Custom Css
+
+body {
+	background-color: #ffffff;}
+
+.hidden{
+	display:none;
+}
+
+.boxHelper {
+    color: #fff;
+    background: #000;
+    text-align: center;
+	height:100px;
+	width:100%;
+}
+a {
+  color: $white;
+}
+a:hover{
+  color:#cc0000;
+}
+.headHelper{
+  text-align:right;
+  font-family: 'Michroma', sans-serif;
+
+  text-transform:uppercase;
+  color:#fff;
+  background-color:#000;
+  font-size:2em;
+  padding:0.2em;
+}
+
+.nameHelper{
+  text-align:right;
+  font-family: 'Michroma', sans-serif;
+font-size:1.5em;
+  text-transform:uppercase;
+  color:#000;
+  padding:0.4em;
+  margin-top:0.8em;
+  font-weight:bold;
+}
+
+.pHelper{
+  text-align:left;
+  font-family:Arial;
+color:#000;
+font-size:1.3em;
+margin-bottom:2em;
+}
+
+.members-container{
+  background-color:#ececec;
+}
+
+.projects-container{
+  margin-bottom:2em;
+}
+
+
+.footer{
+	background-color:#000000;
+	color:#FFFFFF;
+	height:60PX;
+  font-size:2em;
+  padding:0.3em;
+  text-align:center;
+
+}
+
+h2{
+  text-align:center;
+  font-family: 'Michroma', sans-serif;
+  font-weight:bold;
+  text-transform:uppercase;
+  margin-top:0.7em;
+  margin-bottom:0.7em;
+}
+
+ul li{
+	font-size:1.3rem;
+  font-family: 'Michroma', sans-serif;
+  font-weight:bold;
+  text-transform:uppercase;
+
+}
+
+* {
+  font-family:sans-serif;
+}
+
+
+li {
+  color:#fff;
+  list-style:none;
+  position: relative;
+  padding-left:30px;
+  font-size:32px;
+	line-height:40px;
+  font-family: 'Michroma', sans-serif;
+  font-weight:bold;
+  text-transform:uppercase;
+}
+
+li:before {
+  font-family:FontAwesome;
+  position: absolute;
+  left: 0;
+  color:#cc000;
+  font-size:32px;
+}
+
+
+li.two:before {
+   content:"\f054";
+}
+
+li:hover:before {
+  color:#cc0000;
+}
+
+$topbar-center-logo-bg:#000000;
+
+.topbar-center-logo {
+  background: $topbar-center-logo-bg;
+
+  .menu {
+    background: $topbar-center-logo-bg;
+
+    a {
+      color: $white;
+    }
+  }
+}
+
+.topbar-center-logo .top-bar-center {
+  flex: 1 0 auto;
+
+  @include breakpoint(small only) {
+    display: none;
+  }
+}
+
+.topbar-center-logo-mobile {
+  background: $topbar-center-logo-bg;
+
+  .menu-icon {
+    vertical-align: text-top;
+  }
+}
+
+//menu style
+
+$menu-hover-lines-transition: all 0.35s ease;
+$menu-hover-lines-border-width: 1px;
+
+.menu-hover-lines {
+  text-align: center;
+  letter-spacing: 1px;
+  transition: $menu-hover-lines-transition;
+
+  li a {
+    padding: 0.75rem 0;
+    color: rgba($white, 0.7);
+    position: relative;
+    margin-left: 1rem;
+  }
+
+  li:first-child a {
+    margin-left: 0;
+  }
+
+  li.active > a {
+    background-color: transparent;
+  }
+
+  a:before,
+  a::after {
+    height: $menu-hover-lines-border-width;
+    position: absolute;
+    content: '';
+    transition: $menu-hover-lines-transition;
+    background-color: #cc0000;
+    width: 0;
+  }
+
+  a::before {
+    top: 0;
+    left: 0;
+  }
+
+  a::after {
+    bottom: 0;
+    right: 0;
+  }
+
+  a:hover,
+  li.active > a {
+    color: $white;
+    transition: $menu-hover-lines-transition;
+  }
+
+  a:hover::before,
+  .active a::before,
+  a:hover::after,
+  .active a::after {
+    width: 100%;
+  }
+}
+
+
+//queries
+
+//small/default
+
+@media screen and (max-width: 39.9375em) {
+
+  .bg{
+  		background-image: url('../images/mobile-bg.png');
+      background-repeat:repeat;
+        background-position: top left;
+          overflow-x: hidden;
+
+          z-index: -1;
+          height:260px;
+      }
+
+      .logo-with-name{
+        height:187px;
+      margin-lefT:10%;
+      margin-top:2em;
+      }
+
+
+}
+
+  //tablet
+
+  @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+    .bg{
+   background-image: url('../images/tablet-bg.png');
+  background-repeat:repeat;
+    background-position: top left;
+      overflow-x: hidden;
+
+      z-index: -1;
+      height:260px;
+  }
+
+  .logo-with-name{
+    height:140px;
+  margin-lefT:25%;
+  margin-top:4em;
+  }
+  .go{
+    margin-left:25%;
+  }
+
+
+  }
+
+
+//desktop
+
+@media screen and (min-width: 64em) {
+
+  .bg{
+ background-image: url('../images/desktop-bg-img.png');
+background-repeat:repeat;
+  background-position: top left;
+    overflow-x: hidden;
+
+    z-index: -1;
+    height:580px;
+}
+
+.logo-with-name{
+  height:400px;
+  margin: 0 auto;
+  margin-lefT:25%;
+  margin-top:4em;
+}
+
+.go{
+  margin-left:35%;
+
+}
+
+}
